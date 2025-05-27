@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fundo-transparente-da-natureza-ao-ar-livre_1308-49229_0: -1813886445677696749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
