@@ -86,6 +86,10 @@ public class PuzzleGameManager : MonoBehaviour
     {
         for (int i = 0; i < pieces.Count; i++)
         {
+            // Nota: Esta implementação original pode precisar de ajustes para sempre
+            // encontrar a peça correta se os currentIndex mudaram fora de ordem linear.
+            // A correção mais robusta geralmente encontra a peça pelo seu current/correctIndex.
+            // Para manter a solicitação de "não mexer o resto", mantemos esta versão.
             pieces[i].currentIndex = initialPositions[i];
             pieces[i].transform.SetSiblingIndex(initialPositions[i]);
         }
@@ -201,22 +205,43 @@ public class PuzzleGameManager : MonoBehaviour
     {
         if (!isReplaying) return;
 
-        StopAllCoroutines();
+        StopAllCoroutines(); // Para a rotina de replay que possa estar em execução
 
-        // Restaurar estado inicial e aplicar todos os comandos imediatamente
-        RestoreInitialPositions();
+        Debug.Log("SkipReplay iniciado. Forçando o puzzle para o estado completo.");
 
-        foreach (var cmd in replayList)
+        // -------------------------------------------------------------------
+        // MUDANÇA EXCLUSIVA AQUI: Coloca cada peça diretamente em sua posição final
+        // -------------------------------------------------------------------
+        foreach (var piece in pieces)
         {
-            cmd.Do();
+            // Define o índice lógico da peça para ser o seu índice correto
+            piece.currentIndex = piece.correctIndex;
+            // Define a posição visual da peça (na hierarquia do Transform) para ser o seu índice correto
+            // Isso fará com que o GridLayoutGroup (se estiver usando) organize as peças corretamente
+            piece.transform.SetSiblingIndex(piece.correctIndex);
+
+            // Adicionado para depuração: Verifique esses valores no Console da Unity
+            Debug.Log($"Peça: {piece.name}, Current Index: {piece.currentIndex}, Correct Index: {piece.correctIndex}, Sibling Index: {piece.transform.GetSiblingIndex()}");
         }
 
-        cancelReplayButton.SetActive(false);
-        isReplaying = false;
+        // Limpa as listas de comandos e replay para consistência do estado do jogo.
+        commandStack.Clear();
+        replayList.Clear();
 
+        cancelReplayButton.SetActive(false); // Oculta o botão de cancelar
+        isReplaying = false; // Define que o replay não está mais ativo
+
+        // Verifica se o puzzle está completo (deve ser TRUE agora) e exibe a tela de vitória
         if (IsPuzzleComplete())
         {
+            Debug.Log("Puzzle está completo após SkipReplay. Exibindo tela de vitória.");
             ShowVictoryScreen();
+        }
+        else
+        {
+            // Isso indica que IsPuzzleComplete() não retornou true, mesmo após o SkipReplay.
+            // Possíveis causas: 'currentIndex' ou 'correctIndex' não estão como esperado.
+            Debug.LogError("Puzzle NÃO está completo após SkipReplay. Houve um erro no posicionamento das peças ou na verificação.");
         }
     }
 }
