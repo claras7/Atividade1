@@ -1,27 +1,27 @@
 using UnityEngine;
 
-public class EstadoSemMoeda : Estado
+public class EstadoSemRefrigerante : Estado
 {
-    public EstadoSemMoeda(MaquinaDeRefrigerante maquina) : base(maquina) { }
+    public EstadoSemRefrigerante(MaquinaDeRefrigerante maquina) : base(maquina) { }
 
     public override void Entrar()
     {
-        maquina.AtualizarVisor("Insira moeda");
+        maquina.AtualizarVisor("VAZIO");
     }
 
     public override void InserirMoeda()
     {
-        maquina.DefinirEstado(maquina.estadoComMoeda);
+        maquina.AtualizarVisor("VAZIO");
     }
 
     public override void Cancelar()
     {
-        maquina.AtualizarVisor("Sem moeda");
+        maquina.AtualizarVisor("VAZIO");
     }
 
     public override void Comprar()
     {
-        maquina.AtualizarVisor("Insira moeda primeiro");
+        maquina.AtualizarVisor("VAZIO");
     }
 
     public override void Manutencao()
