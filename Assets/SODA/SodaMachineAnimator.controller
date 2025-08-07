@@ -37,11 +37,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: estaEmManutencao
-    m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: temRefrigerante
+    m_ConditionEvent: SemMoeda
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9193631386404506195}
@@ -70,6 +67,12 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: temRefrigerante
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: SemRefrigerante
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Manutencao
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6763556295733888512}
@@ -121,8 +124,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: temMoeda
+  - m_ConditionMode: 1
+    m_ConditionEvent: SemMoeda
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9193631386404506195}
@@ -146,8 +149,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: temRefrigerante
+  - m_ConditionMode: 1
+    m_ConditionEvent: SemRefrigerante
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6763556295733888512}
@@ -172,7 +175,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: temMoeda
+    m_ConditionEvent: ComMoeda
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2780159208420913773}
@@ -197,7 +200,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: estaEmManutencao
+    m_ConditionEvent: Manutencao
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1291048675013607951}
@@ -284,7 +287,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: vender
+    m_ConditionEvent: Venda
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5999722952043748908}
@@ -311,6 +314,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: estaEmManutencao
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Manutencao
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1291048675013607951}
   m_Solo: 0
@@ -334,26 +340,32 @@ AnimatorController:
   m_Name: SodaMachineAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: temMoeda
+  - m_Name: Venda
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: temRefrigerante
+  - m_Name: ComMoeda
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: estaEmManutencao
+  - m_Name: SemMoeda
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: vender
-    m_Type: 9
+  - m_Name: SemRefrigerante
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Manutencao
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -408,7 +420,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: temRefrigerante
+    m_ConditionEvent: SemMoeda
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: estaEmManutencao
@@ -434,7 +446,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: SemMoeda
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9193631386404506195}
   m_Solo: 0
@@ -485,8 +500,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: temRefrigerante
+  - m_ConditionMode: 1
+    m_ConditionEvent: SemRefrigerante
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6763556295733888512}

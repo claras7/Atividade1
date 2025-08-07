@@ -13,9 +13,11 @@ public class EstadoManutencao : Estado
     }
 
     public override void InserirMoeda()
-    {
-        maquina.AdicionarLatinha();
-    }
+{
+    Debug.Log("InserirMoeda chamado no EstadoManutencao");
+    maquina.AdicionarLatinha();
+}
+
 
     public override void Cancelar()
     {

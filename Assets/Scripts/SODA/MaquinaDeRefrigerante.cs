@@ -56,13 +56,15 @@ public class MaquinaDeRefrigerante : MonoBehaviour
     public void Comprar() => estadoAtual.Comprar();
     public void Manutencao() => estadoAtual.Manutencao();
 
-    public void AdicionarLatinha()
-    {
-        estoqueAtual++;
-        GameObject nova = Instantiate(prefabLatinha, estoque);
-        nova.transform.localPosition = new Vector3(0, estoque.childCount * -30, 0);
-        AtualizarVisor($"Latinhas: {estoqueAtual}");
-    }
+   public void AdicionarLatinha()
+{
+    Debug.Log("Adicionando latinha ao estoque");
+    estoqueAtual++;
+    GameObject nova = Instantiate(prefabLatinha, estoque);
+    nova.transform.localPosition = new Vector3(0, estoque.childCount * -30, 0);
+    AtualizarVisor($"Latinhas: {estoqueAtual}");
+}
+
 
     public void RetirarLatinha()
     {

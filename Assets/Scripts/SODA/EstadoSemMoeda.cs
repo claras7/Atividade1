@@ -6,7 +6,7 @@ public class EstadoSemMoeda : Estado
 
     public override void Entrar()
     {
-        maquina.AtualizarVisor("Insira moeda");
+        maquina.AtualizarVisor("Insira");
     }
 
     public override void InserirMoeda()
@@ -21,7 +21,7 @@ public class EstadoSemMoeda : Estado
 
     public override void Comprar()
     {
-        maquina.AtualizarVisor("Insira moeda primeiro");
+        maquina.AtualizarVisor("Insira primeiro");
     }
 
     public override void Manutencao()
