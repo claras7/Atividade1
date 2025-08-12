@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: -22}
+  m_AnchoredPosition: {x: -143, y: 8}
   m_SizeDelta: {x: 240.4353, y: 38.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99748916
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 972683863}
         m_TargetAssemblyTypeName: MaquinaDeRefrigerante, Assembly-CSharp
         m_MethodName: Cancelar
         m_Mode: 1
@@ -288,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 36}
+  m_AnchoredPosition: {x: -144, y: 66}
   m_SizeDelta: {x: 240.4353, y: 38.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156869704
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 972683863}
         m_TargetAssemblyTypeName: MaquinaDeRefrigerante, Assembly-CSharp
         m_MethodName: InserirMoeda
         m_Mode: 1
@@ -518,7 +518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: 9.235062}
+  m_AnchoredPosition: {x: 118, y: 55.024002}
   m_SizeDelta: {x: 210.83, y: 110.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &429997818
@@ -555,7 +555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167, y: 5}
+  m_AnchoredPosition: {x: 117, y: 50.788933}
   m_SizeDelta: {x: 215.9189, y: 142.5546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429997820
@@ -632,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: -133}
+  m_AnchoredPosition: {x: -142, y: -103}
   m_SizeDelta: {x: 240.4353, y: 38.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505219353
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 972683863}
         m_TargetAssemblyTypeName: MaquinaDeRefrigerante, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
@@ -876,7 +876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167.99998, y: -148.78894}
+  m_AnchoredPosition: {x: 117.999985, y: -103}
   m_SizeDelta: {x: 210.83, y: 53.1416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968720390
@@ -949,7 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972683861}
   - component: {fileID: 972683860}
-  - component: {fileID: 972683862}
+  - component: {fileID: 972683863}
   m_Layer: 0
   m_Name: SodaMachineController
   m_TagString: Untagged
@@ -994,7 +994,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972683862
+--- !u!114 &972683863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1006,6 +1006,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b87e8546297b2c469ba7de61e786d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 972683860}
+  portaPanel: {fileID: 968720388}
+  visorPanel: {fileID: 429997818}
+  visorTexto: {fileID: 166919124}
+  estoque: {fileID: 1581899079}
+  prefabLatinha: {fileID: 0}
+  botaoInserir: {fileID: 156869704}
+  botaoCancelar: {fileID: 99748916}
+  botaoComprar: {fileID: 505219353}
+  botaoManutencao: {fileID: 1987184982}
+  estoqueAtual: 1
 --- !u!1 &1155675031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,8 +1051,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 47.16327, y: -49.515015}
-  m_SizeDelta: {x: -202.4065, y: -132.7692}
+  m_AnchoredPosition: {x: 117, y: -49.515}
+  m_SizeDelta: {x: -342.08, y: -132.7692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155675033
 MonoBehaviour:
@@ -1391,7 +1402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: -148.78894}
+  m_AnchoredPosition: {x: 118, y: -103}
   m_SizeDelta: {x: 210.83, y: 53.1416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1561446805
@@ -1479,7 +1490,7 @@ Transform:
   m_GameObject: {fileID: 1581899078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 315.20868, y: -29.387695, z: -6.9605966}
+  m_LocalPosition: {x: 265.20868, y: 16.401245, z: -6.9605966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2083,7 +2094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: -78}
+  m_AnchoredPosition: {x: -143, y: -48}
   m_SizeDelta: {x: 240.4353, y: 38.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987184982
@@ -2130,7 +2141,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 972683863}
         m_TargetAssemblyTypeName: MaquinaDeRefrigerante, Assembly-CSharp
         m_MethodName: Manutencao
         m_Mode: 1
